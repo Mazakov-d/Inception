@@ -1,3 +1,3 @@
-FROM nginx:latest
+FROM debian:bullseye
 
-COPY ./index.html /usr/share/nginx/html/index.html
+RUN apt update; apt upgrade; apt install nginx -y

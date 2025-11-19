@@ -1,2 +1,2 @@
-FROM debian:13.0
+FROM debian:bullseye
 

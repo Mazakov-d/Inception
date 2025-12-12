@@ -3,19 +3,32 @@ set -e
 
 cd /var/www/html
 
-if ! wp core is-installed --allow-root; then
+if [ ! -f "wp-config.php" ] && [ ! -f "index.php" ]; then
+    echo "Downloading WordPress..."
+    wp core download --allow-root
+fi
+
+if ! wp core is-installed --allow-root 2>/dev/null; then
     echo "Installing WordPress..."
 
-    wp config create \
-        --dbname="$MYSQL_DATABASE" \
-        --dbuser="$MYSQL_USER" \
-        --dbpass="$MYSQL_PASSWORD" \
-        --dbhost="db:3306" \
-        --allow-root
+    if [ ! -f "wp-config.php" ]; then
+        wp config create \
+            --dbname="$MYSQL_DATABASE" \
+            --dbuser="$MYSQL_USER" \
+            --dbpass="$MYSQL_PASSWORD" \
+            --dbhost="mariadb:3306" \
+            --allow-root
+    fi
+
+    echo "Waiting for database..."
+    until wp db check --allow-root 2>/dev/null; do
+        echo "Database not ready, waiting..."
+        sleep 3
+    done
 
     wp core install \
         --url="$SITE_URL" \
-        --title="My Docker WP" \
+        --title="Inception Wordpress" \
         --admin_user="$ADMIN_USER" \
         --admin_password="$ADMIN_PASSWORD" \
         --admin_email="$ADMIN_EMAIL" \
@@ -30,4 +43,5 @@ else
     echo "WordPress already installed. Skipping setup."
 fi
 
-exec "$@"
+echo "Starting PHP-FPM..."
+exec php-fpm7.4 -F

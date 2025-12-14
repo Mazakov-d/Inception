@@ -1,6 +1,7 @@
 
 services:
   nginx:
+    container_name: nginx
     build: ./requirements/nginx
     ports:
       - "8080:443"
@@ -12,18 +13,26 @@ services:
       - wordpress
   
   wordpress:
+    container_name: wordpress
     build: ./requirements/wordpress
     networks:
       - inception
     volumes:
       - wp_data:/var/www/html
+    depends_on:
+      - mariadb
+    env_file:
+      - ../secrets/.env
 
-  # mariadb:
-  #   build: ./requirements/mariadb 
-  #   networks:
-  #     - inception
-  #   volumes:
-  #     - db_data:/var/www/html
+  mariadb:
+    container_name: mariadb
+    build: ./requirements/mariadb 
+    networks:
+      - inception
+    volumes:
+      - db_data:/var/lib/mysql
+    env_file:
+      - ../secrets/.env
 
 networks:
   inception:
@@ -31,4 +40,4 @@ networks:
 
 volumes:
   wp_data:
-#   db_data:
+  db_data:

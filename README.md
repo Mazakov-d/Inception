@@ -15,6 +15,6 @@ Resources:
 	- https://nginx.org/en/docs/
 	- https://www.hostinger.com/fr/tutoriels/wp-cli#Comment_installer_WP-CLI
 
-	The AI was use to know what is better between Debian or Alpine to build docker image (Debian is the best).
+	The AI was use to know what is better between Debian or Alpine to build docker image.
 	As well to explain the command in the Dockerfile and his structure.
 	I used AI for the CLI command needed to set wordpress, for the nginx config file !

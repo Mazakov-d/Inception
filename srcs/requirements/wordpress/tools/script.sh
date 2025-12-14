@@ -3,9 +3,12 @@ set -e
 
 cd /var/www/html
 
-if [ ! -f "wp-config.php" ] && [ ! -f "index.php" ]; then
+# Check if WordPress core files exist
+if [ ! -f "wp-load.php" ]; then
     echo "Downloading WordPress..."
     wp core download --allow-root
+else
+    echo "WordPress files already present."
 fi
 
 if ! wp core is-installed --allow-root 2>/dev/null; then
@@ -26,6 +29,8 @@ if ! wp core is-installed --allow-root 2>/dev/null; then
         sleep 3
     done
 
+    echo "Database is ready! Installing WordPress..."
+
     wp core install \
         --url="$SITE_URL" \
         --title="Inception Wordpress" \
@@ -44,4 +49,4 @@ else
 fi
 
 echo "Starting PHP-FPM..."
-exec php-fpm7.4 -F
+exec php-fpm8.2 -F

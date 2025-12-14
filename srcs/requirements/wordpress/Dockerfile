@@ -15,7 +15,8 @@ RUN apt-get update && \
         php-imagick \
         wget \
         curl \
-        unzip && \
+        unzip \
+        mariadb-client && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 

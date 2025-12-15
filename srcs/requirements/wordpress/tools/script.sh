@@ -3,7 +3,6 @@ set -e
 
 cd /var/www/html
 
-# Check if WordPress core files exist
 if [ ! -f "wp-load.php" ]; then
     echo "Downloading WordPress..."
     wp core download --allow-root

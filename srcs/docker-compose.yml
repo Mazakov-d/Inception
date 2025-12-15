@@ -40,6 +40,18 @@ networks:
   inception:
     driver: bridge
 
+
 volumes:
   wp_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/dmazari/data/wordpress
+
   db_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/dmazari/data/mariadb

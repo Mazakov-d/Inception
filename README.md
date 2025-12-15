@@ -14,6 +14,7 @@ Resources:
 	- https://developer.wordpress.org/cli/commands/
 	- https://nginx.org/en/docs/
 	- https://www.hostinger.com/fr/tutoriels/wp-cli#Comment_installer_WP-CLI
+	- https://docs.docker.com/reference/compose-file/volumes/
 
 	The AI was use to know what is better between Debian or Alpine to build docker image.
 	As well to explain the command in the Dockerfile and his structure.

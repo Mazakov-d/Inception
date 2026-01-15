@@ -11,8 +11,6 @@ RUN openssl genrsa -out server.key 2048 \
 	&& chmod 644 server.crt \
     && chmod 600 server.key
 
-COPY tools/ .
-
 COPY conf/nginx.conf /etc/nginx/
 
 EXPOSE 443

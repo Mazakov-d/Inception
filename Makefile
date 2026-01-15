@@ -28,7 +28,7 @@ logs:
 ps:
 	$(COMPOSE) ps
 
-sprune: down
+sprune: downv
 	@echo "⚠️  WARNING: You are about to remove ALL Docker containers, images, volumes, and networks!"
 	@read -p "Are you sure you want to continue? (y/N) " confirm; \
 	if [ "$$confirm" != "y" ]; then \
@@ -39,4 +39,4 @@ sprune: down
 
 pre: sprune all
 
-.PHONY: all clean fclean re up down downv build logs ps sprune
+.PHONY: all clean fclean re up down downv build logs ps sprune pre

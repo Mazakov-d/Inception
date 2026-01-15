@@ -10,7 +10,6 @@ up:
 
 build:
 	$(COMPOSE) build --no-cache
-
 down:
 	$(COMPOSE) down
 

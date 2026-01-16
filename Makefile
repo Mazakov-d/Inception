@@ -9,6 +9,8 @@ up:
 	$(COMPOSE) up -d
 
 build:
+	mkdir -p /home/dmazari/data/wordpress
+	mkdir -p /home/dmazari/data/mariadb
 	$(COMPOSE) build --no-cache
 down:
 	$(COMPOSE) down

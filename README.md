@@ -2,13 +2,13 @@ This project has been created as part of the 42 curriculum by dmazari
 
 ## Description
 
-This project was created as part of the 42 curriculum to understand containerization using Docker.
+This project was created to understand containerization using Docker.
 
 Docker allows applications to be deployed in a consistent and reproducible environment by packaging all dependencies inside containers. This approach solves many deployment issues related to environment differences.
 
 In this project, we deploy three services:
 - MariaDB as the database
-- WordPress as the CMS
+- WordPress as the CMS (Community manager sexy)
 - Nginx as the web server
 
 Once the project is running, the WordPress website can be accessed through the SITE_URL defined in the `.env` file.
@@ -16,7 +16,7 @@ Once the project is running, the WordPress website can be accessed through the S
 Key comparisons:
 • Virtual Machines vs Docker: a VM is a complete OS, it's heavy, take time to start it, but it's isolated. Instead the docker use the host kernel, so it's lighter, it's faster to run it and very useful for microservices !
 • Secrets vs Environment Variables: We use a .env file with environment variables for configuration.
-• Docker Network vs Host Network: The docker network create a network between the docker, we don't have to manage them, it's isolate from the Host Network and it's more safe. The Host Network we will have to manage all the ports.
+• Docker Network vs Host Network: The docker network create a network between the containers, we don't have to manage them, it's isolate from the Host Network and it's more safe. The Host Network we will have to manage all the ports.
 • Docker Volumes vs Bind Mounts: Bind Mounts will be dependant of the OS and it's not portable ! With docker Volumes, it's fully handle by docker, it's persistent, safe and portable.
 
 ## Instruction:

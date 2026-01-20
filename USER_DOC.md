@@ -13,19 +13,27 @@ Make sure docker and docker compose is installed and make as well.
 
 From the project root build and start the stack with:
 
+```bash
 make
+```
 
 Stop the services:
 
+```bash
 make clean
+```
 
 Remove volumes (data will be deleted):
 
+```bash
 make fclean
+```
 
 Remove ALL docker resources:
 
+```bash
 make sprune
+```
 
 ## Access the site
 
@@ -41,11 +49,15 @@ Credentials are configured via environment files.
 
 - Show container status:
 
+```bash
 make ps
+```
 
 - See logs for all services:
 
+```bash
 make logs
+```
 
 ## Locate and manage the credentials
 

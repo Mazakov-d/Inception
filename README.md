@@ -8,7 +8,7 @@ Docker allows applications to be deployed in a consistent and reproducible envir
 
 In this project, we deploy three services:
 - MariaDB as the database
-- WordPress as the CMS (Community manager sexy)
+- WordPress as the CMS (Content Management System)
 - Nginx as the web server
 
 Once the project is running, the WordPress website can be accessed through the SITE_URL defined in the `.env` file.

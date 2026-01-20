@@ -40,8 +40,7 @@ make sprune
 After the services start, open a browser to:
 
 - https://dmazari.42.fr — WordPress site
-- https://dmazari.42.fr/wp-admin — WordPress admin
-- https://dmazari.42.fr/wp-user — user login
+- https://dmazari.42.fr/wp-admin — WordPress login
 
 Credentials are configured via environment files.
 

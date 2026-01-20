@@ -38,6 +38,8 @@ sprune: downv
 		exit 1; \
 	fi
 	docker system prune -a --volumes -f
+	sudo rm -rf /home/dmazari/data/wordpress
+	sudo rm -rf /home/dmazari/data/mariadb
 
 pre: sprune all
 

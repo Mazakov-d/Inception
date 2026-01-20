@@ -58,4 +58,4 @@ Here are the command line you can use at the root of the project:
 
 AI was used to determine whether Debian or Alpine is better for building Docker images.
 As well as to explain the commands in the Dockerfile and its structure.
-I used AI for the CLI command needed to set wordpress, for the nginx config file !
+I used AI for the CLI command needed to set wordpress, for the nginx config file ! Also for the README.md and the docs.
